@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'customers',
     'orders',
     'products',
-    'django_extensions',
     'corsheaders',
 ]
 
