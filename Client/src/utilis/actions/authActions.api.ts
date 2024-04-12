@@ -7,7 +7,6 @@ interface UserInfo {
   last_name: string;
   token: string;
 }
-
 export const getUser = async (
   username: string,
   password: string
@@ -18,10 +17,12 @@ export const getUser = async (
     token: "",
   };
   try {
+    console.log(username, password);
     const { data } = await axios.post(`${PATH_SERVER}/auth/`, {
       username: username,
       password: password,
     });
+    console.log(data);
     userInfo.token = data.token;
     const accountResponse = await axios.get(
       `${PATH_SERVER}/login/${username}/`,
@@ -36,6 +37,7 @@ export const getUser = async (
     userInfo.last_name = accountResponse.data.last_name;
     return userInfo;
   } catch (error: any) {
+    console.log(error);
     return error.response.data;
   }
 };
