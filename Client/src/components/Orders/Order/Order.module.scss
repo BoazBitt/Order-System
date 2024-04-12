@@ -1,0 +1,57 @@
+.__order {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  .__orderInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .__orderDates {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .__orderProducts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 2px;
+    .__product {
+      border: 3px solid gray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .__item {
+        align-items: center;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        text-align: center;
+        padding: 20px;
+      }
+    }
+  }
+  .__btns {
+    display: flex;
+    gap: 3px;
+    padding: 5px;
+
+    button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 6px 14px;
+      font-family: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
+      border-radius: 6px;
+      border: none;
+      background: #000000;
+      color: #ffffff;
+      transition: ease-in-out 0.3s;
+    }
+  }
+}

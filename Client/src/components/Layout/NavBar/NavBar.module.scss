@@ -1,0 +1,43 @@
+.__headerContainer {
+  border-bottom: 2px solid gray;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .__title {
+    font-family: "Caveat", cursive;
+    font-family: "Lobster", sans-serif;
+    font-family: "Oswald", sans-serif;
+    font-family: "Permanent Marker", cursive;
+    font-size: xx-large;
+  }
+  .__links {
+    display: flex;
+    text-decoration: none;
+    gap: 6px;
+    .__link {
+      text-decoration: none;
+      color: black;
+    }
+  }
+  .__user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      padding: 10px;
+    }
+    button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 6px 14px;
+      font-family: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
+      border-radius: 6px;
+      border: none;
+      background: #fa0606;
+      color: #ffffff;
+    }
+  }
+}
