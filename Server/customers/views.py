@@ -71,11 +71,12 @@ class CustomerViewSet(viewsets.ModelViewSet):
         for order in orders:
             for item in order.orderitem_set.all():
                 product_name = item.product.prodName  
-                product_price = item.product.price  
+                product_price = item.product.price 
+                product_type = item.product.type 
                 quantity = item.quantity
 
                 if product_name not in report:
-                    report[product_name] = {'total_quantity': 0, 'total_spent': 0}
+                    report[product_name] = {'type':product_type,'total_quantity': 0, 'total_spent': 0}
 
                 report[product_name]['total_quantity'] += quantity
                 report[product_name]['total_spent'] += quantity * product_price
@@ -83,7 +84,8 @@ class CustomerViewSet(viewsets.ModelViewSet):
         formatted_report = [{
             'product_name': key,
             'total_quantity': value['total_quantity'],
-            'total_spent': value['total_spent']
+            'total_spent': value['total_spent'],
+            'type':value['type']
         } for key, value in report.items()]
 
         response_data = {
