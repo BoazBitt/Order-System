@@ -26,10 +26,10 @@ SECRET_KEY = 'django-insecure-c5kizsd6%rqjxr9e-%81!i1d%sad#e0k10sj$*n41^6$7ust1n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []#'localhost','Boaz21114.pythonanywhere.com'
+ALLOWED_HOSTS = ['localhost','Boaz21115.pythonanywhere.com']#
 
 CORS_ALLOWED_ORIGINS = [
-    # 'Boaz21114.pythonanywhere.com'
+    'Boaz21115.pythonanywhere.com'
 ]
 # Application definition
 
