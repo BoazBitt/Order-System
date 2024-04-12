@@ -29,7 +29,9 @@ DEBUG = False
 ALLOWED_HOSTS = ['localhost','Boaz21115.pythonanywhere.com']#
 
 CORS_ALLOWED_ORIGINS = [
-    'https://order-system-rv1i.onrender.com'
+    'https://order-system-rv1i.onrender.com',
+    'http://localhost:3000/'
+
 ]
 # Application definition
 
