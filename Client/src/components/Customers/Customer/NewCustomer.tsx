@@ -67,6 +67,7 @@ const NewCustomer = ({ getData }: NewCustomerProps) => {
           name="phone"
           value={details.phone}
           onChange={handleChange}
+          maxLength={10}
         />
 
         <button type="submit">Submit</button>

@@ -19,10 +19,12 @@ const UserSlice = createSlice({
   initialState: initialUserState,
   reducers: {
     login(state, action) {
+      const { first_name, last_name, token } = action.payload;
+      if (!token) return;
       state.isAuth = true;
-      state.first_name = action.payload.first_name;
-      state.last_name = action.payload.last_name;
-      state.token = action.payload.token;
+      state.first_name = first_name;
+      state.last_name = last_name;
+      state.token = token;
     },
     logout(state) {
       state.isAuth = false;
