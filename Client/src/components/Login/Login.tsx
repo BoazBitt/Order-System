@@ -10,8 +10,8 @@ interface LoginInfo {
 }
 
 const INITIAL_STATE: LoginInfo = {
-  username: "Boaz",
-  password: "Bb123456",
+  username: "",
+  password: "",
 };
 
 const Login = () => {
