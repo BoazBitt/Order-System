@@ -35,13 +35,13 @@ const Report = () => {
         <h1>Report Page</h1>
         <h3>Customer Name: {Name}</h3>
       </div>
-      {report && (
+      {/* {report && (
         <>
           {" "}
           <BarChart dataPoints={report.bar} />
           <PieChart dataPoints={report.pie} />
         </>
-      )}
+      )} */}
     </>
   );
 };
