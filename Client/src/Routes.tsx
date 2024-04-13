@@ -1,8 +1,8 @@
 import { Navigate, useRoutes } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import MainPage from "./pages/MainPage/MainPage";
+import Report from "./pages/Report/Report";
 import Login from "./components/Login/Login";
-import Summary from "./components/Summary/Summary";
 import { useSelector } from "react-redux";
 import { RootState } from "./store/store";
 const Router = () => {
@@ -14,7 +14,7 @@ const Router = () => {
       children: [
         { element: <Navigate to="/main" />, index: true },
         { path: "main", element: <MainPage /> },
-        { path: "summary", element: <Summary /> },
+        { path: "report/:id", element: <Report /> },
       ],
     },
     {

@@ -9,6 +9,7 @@ import {
   updateCustomer,
 } from "../../../utilis/actions/customerActions.api";
 import { ChangeEvent, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface ProductProps {
   CustomerInfo: CustomerInterface;
@@ -22,6 +23,7 @@ const Customer = ({ CustomerInfo, getData }: ProductProps) => {
   }>({ fullName: fullName, email: email });
   const [isEdit, setIsEdit] = useState<boolean>(false);
   const token = useSelector((state: RootState) => state.user.token);
+  const navigate = useNavigate();
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -41,6 +43,9 @@ const Customer = ({ CustomerInfo, getData }: ProductProps) => {
     await deleteCustomer(token, id);
     return getData();
   };
+  const getcustomerReport = () => {
+    return navigate(`/report/${id}`, { state: { Name: fullName } });
+  };
   return (
     <Box
       sx={{
@@ -54,6 +59,9 @@ const Customer = ({ CustomerInfo, getData }: ProductProps) => {
     >
       <Paper elevation={3}>
         <div className={classes.__customer}>
+          <div className={classes.__report}>
+            <button onClick={getcustomerReport}>Get Report</button>
+          </div>
           <div className={classes.__customerInfo}>
             {!isEdit ? (
               <>
