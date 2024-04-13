@@ -9,7 +9,7 @@ function PieChart({ dataPoints }: PieChartProps) {
     exportEnabled: true,
     animationEnabled: true,
     title: {
-      text: "Website Traffic Sources",
+      text: "Products Distribution",
     },
     data: [
       {
