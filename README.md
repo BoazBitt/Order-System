@@ -1,4 +1,4 @@
-# Django-React Full Stack Project README
+# Django-React Full Stack Project
 
 ## Introduction
 
