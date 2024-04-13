@@ -4,7 +4,6 @@ import { HEADERS, PATH_SERVER } from "./APIEndpoint";
 import CusomerInterface from "../interface/Customer.interface";
 import { newCustomerInterface } from "../../components/Customers/Customer/NewCustomer";
 import CustomerReportInterface from "../interface/CustomerReport.interface";
-import { ChartData } from "./functions/serializeReport";
 
 const route = `customer`;
 
@@ -35,7 +34,7 @@ export const getCustomers = async (
 export const retrieveCustomer = async (
   token: string,
   id: number
-): Promise<ChartData | null> => {
+): Promise<any | null> => {
   try {
     const { data } = await axios.get(`${PATH_SERVER}/${route}/${id}/`, {
       headers: { ...HEADERS, Authorization: `Token ${token}` },
