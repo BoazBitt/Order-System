@@ -10,7 +10,7 @@ import {
 import { useLocation } from "react-router-dom";
 import classes from "./Report.module.scss";
 
-// import BarChart from "./Charts/BarChart";
+import BarChart from "./Charts/BarChart";
 // import PieChart from "./Charts/PieChart";
 const Report = () => {
   const location = useLocation();
@@ -35,13 +35,13 @@ const Report = () => {
         <h1>Report Page</h1>
         <h3>Customer Name: {Name}</h3>
       </div>
-      {/* {report && (
+      {report && (
         <>
           {" "}
           <BarChart dataPoints={report.bar} />
-          <PieChart dataPoints={report.pie} />
+          {/* <PieChart dataPoints={report.pie} /> */}
         </>
-      )} */}
+      )}
     </>
   );
 };
