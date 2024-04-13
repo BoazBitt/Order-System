@@ -10,15 +10,15 @@ import {
 import { useLocation } from "react-router-dom";
 import classes from "./Report.module.scss";
 
-import BarChart from "./Charts/BarChart";
-import PieChart from "./Charts/PieChart";
+// import BarChart from "./Charts/BarChart";
+// import PieChart from "./Charts/PieChart";
 const Report = () => {
   const location = useLocation();
   const { Name } = location.state || {};
   const [report, setReport] = useState<ChartData | null>(null);
   const { id } = useParams();
   const token = useSelector((state: RootState) => state.user.token);
-
+  console.log(report);
   useEffect(() => {
     const getCharts = async () => {
       const data = await getCustomerReport(token, id);
