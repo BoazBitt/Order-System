@@ -11,7 +11,7 @@ import { useLocation } from "react-router-dom";
 import classes from "./Report.module.scss";
 
 // import BarChart from "./Charts/BarChart";
-import PieChart from "./Charts/PieChart";
+// import PieChart from "./Charts/PieChart";
 const Report = () => {
   const location = useLocation();
   const { Name } = location.state || {};
@@ -39,7 +39,7 @@ const Report = () => {
         <>
           {" "}
           {/* <BarChart dataPoints={report.bar} /> */}
-          <PieChart dataPoints={report.pie} />
+          {/* <PieChart dataPoints={report.pie} /> */}
         </>
       )}
     </>
