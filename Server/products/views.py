@@ -3,6 +3,7 @@ from rest_framework.response import Response
 from .models import Product
 from .serializer import ProductSerializer
 from rest_framework.pagination import PageNumberPagination
+from rest_framework.decorators import action
 
 class StandardResultsSetPagination(PageNumberPagination):
     page_size = 3  
@@ -55,5 +56,9 @@ class ProductViewSet(viewsets.ModelViewSet):
         else:
             return Response({"message": "Product not found"}, status=status.HTTP_404_NOT_FOUND)
 
-
-
+    @action(detail=True, methods=['get'], url_path='all')
+    def all_products(self, request, pk=None):
+        queryset = self.get_queryset()
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)
+ 
