@@ -62,7 +62,7 @@ class CustomerViewSet(viewsets.ModelViewSet):
             return Response({"message": "Customer not found"}, status=status.HTTP_404_NOT_FOUND)
         
 
-    @action(detail=True, methods=['get'], url_path='all')
+    @action(detail=False, methods=['get'], url_path='all')
     def all_customers(self, request, pk=None):
         queryset = self.get_queryset()
         serializer = self.get_serializer(queryset, many=True)
