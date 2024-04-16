@@ -7,7 +7,7 @@ class Order(models.Model):
     order_number = models.CharField(max_length=100, unique=True)
     customer = models.ForeignKey(Customer, on_delete=models.PROTECT, related_name='customer')
     comments = models.TextField(blank=True)
-    creation_date = models.DateTimeField()
+    creation_date = models.DateTimeField(auto_now=True)
     last_update_date = models.DateTimeField(auto_now=True)
     products = models.ManyToManyField(Product, related_name='orders')
 
