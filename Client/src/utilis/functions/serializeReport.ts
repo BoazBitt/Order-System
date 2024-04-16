@@ -1,4 +1,4 @@
-import CustomerReportInterface from "../../interface/CustomerReport.interface";
+import CustomerReportInterface from "../interface/CustomerReport.interface";
 export interface ChartData {
   bar: Array<{ y: number; label: string }>;
   pie: Array<{ y: number; label: string }>;

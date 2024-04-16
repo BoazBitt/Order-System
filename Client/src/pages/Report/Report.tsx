@@ -6,7 +6,7 @@ import { getCustomerReport } from "../../utilis/actions/customerActions.api";
 import {
   ChartData,
   serializeReport,
-} from "../../utilis/actions/functions/serializeReport";
+} from "../../utilis/functions/serializeReport";
 import { useLocation } from "react-router-dom";
 import classes from "./Report.module.scss";
 //

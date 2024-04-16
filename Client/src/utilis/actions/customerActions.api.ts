@@ -108,8 +108,22 @@ export const updateCustomer = async (
       }
     );
 
-    if (response.status === 201) return "Customer created successfully";
+    if (response.status === 201) return "Customer updated successfully";
     throw new Error("Customer creation failed");
+  } catch (error) {
+    console.error("Error:", error);
+    return null;
+  }
+};
+
+export const getAllCustomers = async (
+  token: string
+): Promise<CusomerInterface[]> => {
+  try {
+    const { data } = await axios.get(`${PATH_SERVER}/${route}/all/`, {
+      headers: { ...HEADERS, Authorization: `Token ${token}` },
+    });
+    return data;
   } catch (error) {
     console.error("Error:", error);
     return null;

@@ -88,7 +88,7 @@ const Order = ({ OrderInfo, getData }: OrderProps) => {
         display: "flex",
         flexWrap: "wrap",
         "& > :not(style)": {
-          width: 300,
+          width: 600,
           height: 300,
         },
       }}
@@ -100,7 +100,7 @@ const Order = ({ OrderInfo, getData }: OrderProps) => {
             <span>{`Customer: ${cstmerName}`}</span>
           </div>
           <div className={classes.__orderDates}>
-            <span>{`Crated: ${creation_date}`}</span>
+            <span>{`Created: ${creation_date}`}</span>
             <span>{`Last Update: ${last_update_date}`}</span>
           </div>
           <div className={classes.__orderProducts}>

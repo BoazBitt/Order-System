@@ -2,6 +2,7 @@
 import axios from "axios";
 import { HEADERS, PATH_SERVER } from "./APIEndpoint";
 import OrderInterface, { OrderItem } from "../interface/Orders.interface";
+import { dataIntreface } from "../../components/Orders/Order/NewOrder";
 
 const route = `orders`;
 
@@ -34,7 +35,7 @@ export const deleteOrder = async (token: string, id: number): Promise<any> => {
     const response = await axios.delete(`${PATH_SERVER}/${route}/${id}/`, {
       headers: { ...HEADERS, Authorization: `Token ${token}` },
     });
-    if (response.status === 204) return "Customer deleted successfully";
+    if (response.status === 204) return "Customer updated successfully";
     throw new Error();
   } catch (error) {
     console.log("Error:", error);
@@ -57,7 +58,28 @@ export const updateOrder = async (
       }
     );
 
-    if (response.status === 201) return "Customer created successfully";
+    if (response.status === 201) return "Order updated successfully";
+    throw new Error("Customer creation failed");
+  } catch (error) {
+    console.error("Error:", error);
+    return null;
+  }
+};
+
+export const createOrder = async (
+  token: string,
+  data: dataIntreface
+): Promise<any> => {
+  try {
+    const response = await axios.post(
+      `${PATH_SERVER}/${route}/`,
+      { ...data },
+      {
+        headers: { ...HEADERS, Authorization: `Token ${token}` },
+      }
+    );
+
+    if (response.status === 201) return "Order created successfully";
     throw new Error("Customer creation failed");
   } catch (error) {
     console.error("Error:", error);

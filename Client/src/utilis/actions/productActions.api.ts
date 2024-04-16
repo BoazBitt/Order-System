@@ -77,8 +77,22 @@ export const updateProduct = async (
       }
     );
 
-    if (response.status === 201) return "Product created successfully";
+    if (response.status === 201) return "Product updated successfully";
     throw new Error("Product creation failed");
+  } catch (error) {
+    console.error("Error:", error);
+    return null;
+  }
+};
+
+export const getAllProducts = async (
+  token: string
+): Promise<ProductInterface[]> => {
+  try {
+    const { data } = await axios.get(`${PATH_SERVER}/${route}/all/`, {
+      headers: { ...HEADERS, Authorization: `Token ${token}` },
+    });
+    return data;
   } catch (error) {
     console.error("Error:", error);
     return null;

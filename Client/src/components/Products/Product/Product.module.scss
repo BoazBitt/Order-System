@@ -10,6 +10,10 @@
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
+    input {
+      width: 80%;
+      border: 7px;
+    }
   }
   .__btns {
     display: flex;
