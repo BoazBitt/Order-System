@@ -42,6 +42,7 @@ const Orders = () => {
     <div className={classes.__orders}>
       <div className={classes.__newOrder}>
         <button
+          style={newOrder ? { background: "red" } : { background: "black" }}
           onClick={() => {
             setNewOrder((prev) => !prev);
           }}

@@ -55,3 +55,51 @@
     }
   }
 }
+
+.__newOrder {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  .__customer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .__products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .__inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 6px 14px;
+        font-family: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
+        border-radius: 6px;
+        border: none;
+        background: #053183;
+        color: #ffffff;
+        transition: ease-in-out 0.3s;
+      }
+    }
+  }
+  button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 14px;
+    font-family: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
+    border-radius: 6px;
+    border: none;
+    background: #098f1f;
+    color: #ffffff;
+    transition: ease-in-out 0.3s;
+  }
+}

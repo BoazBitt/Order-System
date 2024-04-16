@@ -2,7 +2,7 @@
 import axios from "axios";
 import { HEADERS, PATH_SERVER } from "./APIEndpoint";
 import OrderInterface, { OrderItem } from "../interface/Orders.interface";
-import { dataIntreface } from "../../components/Orders/Order/NewOrder";
+import { dataIntreface } from "../interface/NewOrder.interface";
 
 const route = `orders`;
 
